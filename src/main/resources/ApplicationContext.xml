@@ -7,37 +7,49 @@
    http://www.springframework.org/schema/aop 
    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
    
-   
-<!-- Setter based -->
-	<!-- <bean name="add1" class="spring.core.model.Address"> 
-	<property name="street"	value="ishq waali gali"/> 
-	<property name="city" value="GZB"/> 
-	<property name="state"value="UP"/>
-	
-	-->
-	
-	
-	<!-- 
-	 </bean> <bean id="vishal" class="spring.core.model.Employee"> 
-		<property name="name" value="Vishal Kumar" /> <property name="id" value="909" 
-		/> <property name="address" ref="add1"/> </bean> 
-		-->
-	
-	
-	 <!--COnstructor based -->
+  
 
 	<bean id="add" class="spring.model.Address">
 		<constructor-arg name="city" value="Noida" />
 		<constructor-arg name="state" value="UP" />
 	</bean>
-	<!--Parent child relationship-->
-	<bean id="vishal" class="spring.model.Employee">
-		<constructor-arg name="name" value="Mukul" />
-		<constructor-arg name="id" value="101" />
+	
+	<bean id="emp" class="spring.model.Employee">
+		<constructor-arg name="name" value="Dikshant" />
+		<constructor-arg name="id" value="303" />
+		<constructor-arg name="address" ref="add" />
+		<constructor-arg>
+			<list >
+				<value>10</value>
+				<value>20</value>
+				<value>30</value>
+				<value>40</value>
+				<value>50</value>
+				<value>60</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<set>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>1</value>
+				<value>4</value>
+				<value>5</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="1" value="Abhi" />
+				<entry key="2" value="Ajay" />
+				<entry key="3" value="Vishal" />
+				<entry key="4" value="Arup" />
+				<entry key="5" value="Anupam" />
+					
+			
+			</map>
+		</constructor-arg>
+
 	</bean>
 	
-	
-	<bean id = "Kunal" class="spring.model.Employee" parent="vishal">
-		<constructor-arg name="address" ref="add"/>
-	</bean>   
    </beans>
