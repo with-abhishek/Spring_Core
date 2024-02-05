@@ -1,25 +1,31 @@
 package spring.model;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Employee {
 
 	private String name;
 	private int id ;
 	private Address address;
+//	public Employee(String name, int id) {
+//		super();
+//		this.name = name;
+//		this.id = id;
+//	}
+//	
+	public Employee(String name, int id,Address address) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.address=address;
+	}
 	
-	private List<Integer> list;
-	private Set<Integer> set;
-	private Map<Integer,String> map;
+	
 	
 	
 	

@@ -10,7 +10,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		ApplicationContext IOC = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-		Employee emp =  (Employee)IOC.getBean("emp");
+		Employee emp =  IOC.getBean(Employee.class);
 		
 		System.out.println(emp);
 	}
