@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+     <bean name="add1" class="spring.model.Address" scope="prototype"> 
+	<constructor-arg name="city" value="GZB"/> 
+	<constructor-arg name="state" value="UP"/> 
+	
+      </bean> 
+      <bean name="emp3" class="spring.model.Employee3">
+	 <property name="name" value="Amitshah"></property>
+	 <property name="id" value="101"></property>
+	 <lookup-method name="applyAddress" bean="add1"/>
+		  
+		  
+		  
+	  </bean>
+               
+               
+ </beans>          
