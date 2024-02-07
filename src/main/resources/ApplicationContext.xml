@@ -7,7 +7,7 @@
    http://www.springframework.org/schema/aop 
    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
    
-  	
+  	<!-- Autowiring with byName -->
 	<bean id="emp" class="spring.model.Employee" autowire="byName">
 		<property name="name" value="Ajay" />
 		<property name="id" value="14" />
@@ -18,4 +18,26 @@
 		<constructor-arg name="state" value="UP" />
 	</bean>
 	
+	<!--
+	 Autowiring with byType 
+	<bean id="emp" class="spring.model.Employee" autowire="byType">
+		<property name="name" value="Ajay" />
+		<property name="id" value="14" />
+	</bean>
+	
+	<bean id="address" class="spring.model.Address">
+		<constructor-arg name="city" value="Noida" />
+		<constructor-arg name="state" value="UP" />
+	</bean>
+	
+	 Autowiring with constructer 
+	<bean id="emp" class="spring.model.Employee" autowire="constructor">
+		<property name="name" value="Ajay" />
+		<property name="id" value="14" />
+	</bean>
+	
+	<bean id="address" class="spring.model.Address">
+		<constructor-arg name="city" value="Noida" />
+		<constructor-arg name="state" value="UP" />
+	</bean>-->
    </beans>
