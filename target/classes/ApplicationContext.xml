@@ -8,23 +8,4 @@
 
 	<context:component-scan base-package="spring" />
 
-
-	<!--<context:annotation-config/>		   
-						   -->
-	<!-- Autowiring with byName -->
-	<!--	<bean id="emp" class="spring.model.Employee">
-		<property name="name" value="Ajay" />
-		<property name="id" value="14" />
-	</bean>
-
-	<bean id="address" class="spring.model.Address" >
-		<constructor-arg name="city" value="Noida" />
-		<constructor-arg name="state" value="UP" />
-	</bean>
-	<bean id="address1" class="spring.model.Address" >
-		<constructor-arg name="city" value="Azamgarh" />
-		<constructor-arg name="state" value="UP" />
-	</bean>
--->
-
 </beans>

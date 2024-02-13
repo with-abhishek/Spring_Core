@@ -8,43 +8,47 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-//@AllArgsConstructor
 @Component
 public class Employee {
 
 	private String name="Ajay";
 	private int id =101;
 	
-//	@Autowired //--> through Setter based injection 
-	private Address address;
-//	public Employee(String name, int id) {
-//		super();
-//		this.name = name;
-//		this.id = id;
-//	}
-//	
-	public Employee(String name, int id,Address address) {
+	private IAddress address;
+	
+	public Employee(String name, int id, IAddress address) {
 		super();
 		this.name = name;
 		this.id = id;
-		this.address=address;
+		this.address = address;
 	}
-	public Address getAddress()
-	{
+	public Employee() {
+		super();
+	}
+	public IAddress getAddress() {
 		return address;
 	}
 	@Autowired
-	@Qualifier("address") // --> used when the multiple bean of the class to search a bean 1 and it found more ,ambiguity problem
-	public void setAddress(Address address)
-	{
-		this.address=address;
+	@Qualifier("address1")
+	public void setAddress(IAddress address) {
+		this.address = address;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", id=" + id + ", address=" + address + "]";
+	}
 	
 }
