@@ -2,6 +2,7 @@ package spring.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,12 +11,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 //@AllArgsConstructor
+@Component
 public class Employee {
 
-	private String name;
-	private int id ;
+	private String name="Ajay";
+	private int id =101;
 	
-//	@Autowired
+//	@Autowired //--> through Setter based injection 
 	private Address address;
 //	public Employee(String name, int id) {
 //		super();
@@ -34,7 +36,7 @@ public class Employee {
 		return address;
 	}
 	@Autowired
-	@Qualifier("address1") // --> used when the multiple bean of the class to search a bean 1 and it found more ,ambiguity problem
+	@Qualifier("address") // --> used when the multiple bean of the class to search a bean 1 and it found more ,ambiguity problem
 	public void setAddress(Address address)
 	{
 		this.address=address;
